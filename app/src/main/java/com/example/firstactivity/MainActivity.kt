@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         when (menuItemId) {
             R.id.home -> {
                 ft.replace(R.id.main_frame, Home()).commitAllowingStateLoss()
-//                initRecycler()
+//                initRecycler() #이부분이 오류
             }
             R.id.Profile -> ft.replace(R.id.main_frame, Person()).commitAllowingStateLoss()
             R.id.Search -> ft.replace(R.id.main_frame, Search()).commitAllowingStateLoss()
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initRecycler() {
 
-        MenuAdapter = Adapter(Home)
+        MenuAdapter = Adapter(Home) // 원래 Home대신 this가 들어가는데 오류가 나서 바꿈
         findViewById<RecyclerView>(R.id.rv_item).adapter = MenuAdapter
 
         datas.apply {
