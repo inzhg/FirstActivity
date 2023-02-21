@@ -30,5 +30,4 @@ class Adapter(private val context: Home) : RecyclerView.Adapter<Adapter.ViewHold
     }
 }
 
-
 data class MenuData (val menu : String)

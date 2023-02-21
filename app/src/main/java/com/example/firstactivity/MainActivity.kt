@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var MenuAdapter: Adapter
-    private val datas = mutableListOf<MenuData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +28,7 @@ class MainActivity : AppCompatActivity() {
         val ft = supportFragmentManager.beginTransaction()
 
         when (menuItemId) {
-            R.id.home -> {
-                ft.replace(R.id.main_frame, Home()).commitAllowingStateLoss()
-            }
+            R.id.home -> ft.replace(R.id.main_frame, Home()).commitAllowingStateLoss()
             R.id.Profile -> ft.replace(R.id.main_frame, Person()).commitAllowingStateLoss()
             R.id.Search -> ft.replace(R.id.main_frame, Search()).commitAllowingStateLoss()
             R.id.Settings -> ft.replace(R.id.main_frame, Settings()).commitAllowingStateLoss()
