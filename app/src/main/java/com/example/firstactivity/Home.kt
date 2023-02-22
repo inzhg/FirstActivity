@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class Home : Fragment() {
     private lateinit var MenuAdapter: Adapter
@@ -17,7 +18,6 @@ class Home : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -29,6 +29,8 @@ class Home : Fragment() {
 
 
 
+
+
     @SuppressLint("NotifyDataSetChanged")
     private fun initRecycler(item : RecyclerView) {
 
@@ -36,9 +38,9 @@ class Home : Fragment() {
         item.adapter = MenuAdapter
 
         datas.apply {
-            add(MenuData( menu = "mary",))
-            add(MenuData( menu = "hi",))
-            add(MenuData( menu = "hello",))
+            add(MenuData( menu = "mary"))
+            add(MenuData( menu = "hi"))
+            add(MenuData( menu = "hello"))
 
             MenuAdapter.datas = datas
             MenuAdapter.notifyDataSetChanged()

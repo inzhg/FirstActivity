@@ -2,8 +2,10 @@ package com.example.firstactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.background = null
 
         bottomNavigationView.setOnItemSelectedListener {
+            if (it.itemId != R.id.home) {
+                findViewById<FloatingActionButton>(R.id.fab).hide()
+            } else findViewById<FloatingActionButton>(R.id.fab).show()
             changeFragment(it.itemId)
             true
         }
